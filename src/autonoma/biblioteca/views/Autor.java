@@ -6,12 +6,18 @@ import javax.swing.JOptionPane;
 
 public class Autor extends javax.swing.JFrame {
 
+   private Biblioteca biblioteca;
    
-    public Autor() {
+    public Autor(String biblioteca, String documento, String correo, String editorial, String profesion) {
         initComponents();
+        
     }
 
- 
+    private Autor() {
+       
+    }
+
+  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -225,13 +231,17 @@ public class Autor extends javax.swing.JFrame {
         }
 
         // Mostrar los datos ingresados en un mensaje de diálogo
-        String mensaje = "Autor guardado:\n"
-                + "Nombre: " + nombre + "\n"
-                + "Documento: " + documento + "\n"
-                + "Correo Electronico: " + correo + "\n"
-                + "Editorial: " + editorial + "\n"
-                + "Profesion: " + profesion;
-        JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        // Crear un objeto Autor
+        Autor nuevoAutor = new Autor(nombre, documento, correo, editorial, profesion);
+
+        // Agregar el autor a la biblioteca (capa de negocio)
+        boolean resultado = biblioteca.agregarAutor(nuevoAutor);
+
+        if (resultado) {
+            JOptionPane.showMessageDialog(this, "Autor guardado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al guardar el autor.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
         // Limpiar los campos después de guardar
         jTextFieldNombre.setText("");
@@ -240,6 +250,7 @@ public class Autor extends javax.swing.JFrame {
         jTextFieldEditorial.setText("");
         jTextFieldProfesion.setText("");
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -1,7 +1,6 @@
 
 package autonoma.biblioteca.models;
 
-
 public class Autor extends Persona {
     private String editorial;
     private String profesion;
@@ -28,5 +27,16 @@ public class Autor extends Persona {
 
     public void setProfesion(String profesion) {
         this.profesion = profesion;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "nombre='" + getNombre() + '\'' +
+                ", documentoIdentidad='" + getDocumentoIdentidad() + '\'' +
+                ", correoElectronico='" + getCorreoElectronico() + '\'' +
+                ", editorial='" + editorial + '\'' +
+                ", profesion='" + profesion + '\'' +
+                '}';
     }
 }

@@ -7,9 +7,15 @@ import javax.swing.JOptionPane;
 
 public class Persona extends javax.swing.JFrame {
 
+    private Biblioteca biblioteca;
     
-    public Persona() {
+    public Persona(String biblioteca, String documento, String correo) {
         initComponents();
+        
+    }
+
+    Persona() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     
@@ -162,65 +168,10 @@ public class Persona extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNombreActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        String nombre = jTextFieldNombre.getText();
-        String documento = jTextFieldDocumento.getText();
-        String correo = jTextFieldCorreo.getText();
-
-        // Validar que los campos no estén vacíos
-        if (nombre.isEmpty() || documento.isEmpty() || correo.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Mostrar los datos ingresados en un mensaje de diálogo
-        String mensaje = "Persona guardada:\n"
-                + "Nombre: " + nombre + "\n"
-                + "Documento: " + documento + "\n"
-                + "Correo Electrónico: " + correo;
-        JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
-        // Limpiar los campos después de guardar
-        jTextFieldNombre.setText("");
-        jTextFieldDocumento.setText("");
-        jTextFieldCorreo.setText("");
 
     }//GEN-LAST:event_jButtonGuardarActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Persona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Persona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Persona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Persona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Persona().setVisible(true);
-            }
-        });
-    }
-
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabelCorreo;

@@ -1,4 +1,3 @@
-
 package autonoma.biblioteca.models;
 
 public class Libro {
@@ -26,5 +25,13 @@ public class Libro {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                '}';
     }
 }

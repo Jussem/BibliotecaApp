@@ -1,26 +1,21 @@
 
 package autonoma.biblioteca.models;
 
-
 import java.util.ArrayList;
 
 public class Biblioteca {
     private ArrayList<Libro> libros;
+    private ArrayList<Autor> autores;
+    private ArrayList<Persona> personas;
 
     // Constructor
     public Biblioteca() {
         this.libros = new ArrayList<>();
+        this.autores = new ArrayList<>();
+        this.personas = new ArrayList<>();
     }
 
-    // Métodos
-    public String mostrarLibros() {
-        StringBuilder sb = new StringBuilder();
-        for (Libro libro : libros) {
-            sb.append(libro.getTitulo()).append("\n");
-        }
-        return sb.toString();
-    }
-
+    // Métodos para Libros
     public boolean agregarLibro(Libro libro) {
         return libros.add(libro);
     }
@@ -34,22 +29,55 @@ public class Biblioteca {
         return null;
     }
 
-    public boolean actualizarLibro(long id, Libro nuevoLibro) {
-        for (int i = 0; i < libros.size(); i++) {
-            if (libros.get(i).getId() == id) {
-                libros.set(i, nuevoLibro);
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean eliminarLibro(long id) {
         return libros.removeIf(libro -> libro.getId() == id);
     }
 
-    public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
-        libros.sort((l1, l2) -> l1.getTitulo().compareToIgnoreCase(l2.getTitulo()));
+    public ArrayList<Libro> obtenerLibros() {
         return libros;
+    }
+
+    // Métodos para Autores
+    public boolean agregarAutor(Autor autor) {
+        return autores.add(autor);
+    }
+
+    public Autor buscarAutor(String documentoIdentidad) {
+        for (Autor autor : autores) {
+            if (autor.getDocumentoIdentidad().equals(documentoIdentidad)) {
+                return autor;
+            }
+        }
+        return null;
+    }
+
+    public boolean eliminarAutor(String documentoIdentidad) {
+        return autores.removeIf(autor -> autor.getDocumentoIdentidad().equals(documentoIdentidad));
+    }
+
+    public ArrayList<Autor> obtenerAutores() {
+        return autores;
+    }
+
+    // Métodos para Personas
+    public boolean agregarPersona(Persona persona) {
+        return personas.add(persona);
+    }
+
+    public Persona buscarPersona(String documentoIdentidad) {
+        for (Persona persona : personas) {
+            if (persona.getDocumentoIdentidad().equals(documentoIdentidad)) {
+                return persona;
+            }
+        }
+        return null;
+    }
+
+    public boolean eliminarPersona(String documentoIdentidad) {
+        return personas.removeIf(persona -> persona.getDocumentoIdentidad().equals(documentoIdentidad));
+    }
+
+    public ArrayList<Persona> obtenerPersonas() {
+        return personas;
     }
 }

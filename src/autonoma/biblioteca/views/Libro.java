@@ -5,9 +5,15 @@ import javax.swing.JOptionPane;
 
 public class Libro extends javax.swing.JFrame {
 
+    private Biblioteca biblioteca;
     
-    public Libro() {
-        initComponents();
+    public Libro(long biblioteca, String tituloLibro) {
+        initComponents();   
+        
+    }
+
+    Libro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     
@@ -152,15 +158,28 @@ public class Libro extends javax.swing.JFrame {
             return;
         }
 
-        // Mostrar los datos ingresados en un mensaje de diálogo
-        String mensaje = "Libro guardado:\n"
-                + "ID del Libro: " + idLibro + "\n"
-                + "Título del Libro: " + tituloLibro;
-        JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            // Convertir el ID a long
+            long id = Long.parseLong(idLibro);
 
-        // Limpiar los campos después de guardar
-        jTextField2IDLibro.setText("");
-        jTextFieldTituloLibro.setText("");
+            // Crear un objeto Libro
+            Libro nuevoLibro = new Libro(id, tituloLibro);
+
+            // Agregar el libro a la biblioteca (capa de negocio)
+            boolean resultado = biblioteca.agregarLibro(nuevoLibro);
+
+            if (resultado) {
+                JOptionPane.showMessageDialog(this, "Libro guardado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar el libro.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+            // Limpiar los campos después de guardar
+            jTextField2IDLibro.setText("");
+            jTextFieldTituloLibro.setText("");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El ID del libro debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

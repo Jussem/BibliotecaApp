@@ -1,15 +1,18 @@
 
 package autonoma.biblioteca.views;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 
 public class Biblioteca extends javax.swing.JFrame {
+    private Biblioteca biblioteca;
     public Biblioteca() {
-        
+        initComponents();
+        biblioteca = new Biblioteca();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -154,8 +157,7 @@ public class Biblioteca extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarPersonasActionPerformed
 
     private void GestionarAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarAutoresActionPerformed
-        Autor autor = new Autor();
-        autor.setVisible(true);
+
     }//GEN-LAST:event_GestionarAutoresActionPerformed
 
     private void GestionarPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GestionarPersonasMouseClicked
@@ -213,4 +215,16 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    boolean agregarLibro(Libro nuevoLibro) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    boolean agregarAutor(Autor nuevoAutor) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    boolean agregarPersona(Persona nuevaPersona) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

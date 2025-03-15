@@ -1,89 +1,65 @@
 
 package autonoma.biblioteca.main;
 
+import autonoma.biblioteca.models.Autor;
 import autonoma.biblioteca.models.Biblioteca;
 import autonoma.biblioteca.models.Libro;
-import java.util.ArrayList;
-
-
-import java.util.Scanner;
+import autonoma.biblioteca.models.Persona;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Crear una instancia de Biblioteca
         Biblioteca biblioteca = new Biblioteca();
 
-        while (true) {
-            System.out.println("\n--- Menu de la Biblioteca ---");
-            System.out.println("1. Agregar libro");
-            System.out.println("2. Mostrar libros");
-            System.out.println("3. Buscar libro por ID");
-            System.out.println("4. Eliminar libro por ID");
-            System.out.println("5. Mostrar libros ordenados alfabeticamente");
-            System.out.println("6. Salir");
-            System.out.print("Seleccione una opcion: ");
-            int opcion = scanner.nextInt();
-            scanner.nextLine();  
+        // Crear algunos objetos de prueba
+        Libro libro1 = new Libro(1, "Cien anos de soledad");
+        Libro libro2 = new Libro(2, "1984");
 
-            switch (opcion) {
-                case 1:
-                    System.out.print("Ingrese el ID del libro: ");
-                    long id = scanner.nextLong();
-                    scanner.nextLine();  
-                    System.out.print("Ingrese el titulo del libro: ");
-                    String titulo = scanner.nextLine();
-                    Libro nuevoLibro = new Libro(id, titulo);
-                    if (biblioteca.agregarLibro(nuevoLibro)) {
-                        System.out.println("Libro agregado correctamente.");
-                    } else {
-                        System.out.println("Error al agregar el libro.");
-                    }
-                    break;
+        Persona persona1 = new Persona("Pepito Perez", "12378", "juan@example.com");
+        Autor autor1 = new Autor("Gabriel Garcia Marquez", "87654321", "gabriel@example.com", "Editorial Sudamericana", "Escritor");
 
-                case 2:
-                    System.out.println("\nLibros en la biblioteca:");
-                    System.out.println(biblioteca.mostrarLibros());
-                    break;
+        // Agregar objetos a la biblioteca
+        biblioteca.agregarLibro(libro1);
+        biblioteca.agregarLibro(libro2);
+        biblioteca.agregarPersona(persona1);
+        biblioteca.agregarAutor(autor1);
 
-                case 3:
-                    System.out.print("Ingrese el ID del libro a buscar: ");
-                    long idBuscar = scanner.nextLong();
-                    scanner.nextLine();  
-                    Libro libroEncontrado = biblioteca.buscarLibro(idBuscar);
-                    if (libroEncontrado != null) {
-                        System.out.println("Libro encontrado: " + libroEncontrado.getTitulo());
-                    } else {
-                        System.out.println("Libro no encontrado.");
-                    }
-                    break;
+        // Mostrar los libros, personas y autores en la biblioteca
+        System.out.println("Libros en la biblioteca:");
+        for (Libro libro : biblioteca.obtenerLibros()) {
+            System.out.println(libro);
+        }
 
-                case 4:
-                    System.out.print("Ingrese el ID del libro a eliminar: ");
-                    long idEliminar = scanner.nextLong();
-                    scanner.nextLine();  
-                    if (biblioteca.eliminarLibro(idEliminar)) {
-                        System.out.println("Libro eliminado .");
-                    } else {
-                        System.out.println("Error al eliminar el libro.");
-                    }
-                    break;
+        System.out.println("\nPersonas en la biblioteca:");
+        for (Persona persona : biblioteca.obtenerPersonas()) {
+            System.out.println(persona);
+        }
 
-                case 5:
-                    System.out.println("\nLibros ordenados alfabeticamente:");
-                    ArrayList<Libro> librosOrdenados = biblioteca.obtenerLibrosAlfabeticamente();
-                    for (Libro libro : librosOrdenados) {
-                        System.out.println(libro.getTitulo());
-                    }
-                    break;
+        System.out.println("\nAutores en la biblioteca:");
+        for (Autor autor : biblioteca.obtenerAutores()) {
+            System.out.println(autor);
+        }
 
-                case 6:
-                    System.out.println("Saliendo..");
-                    scanner.close();
-                    return;
+        // Buscar un libro por ID
+        Libro libroEncontrado = biblioteca.buscarLibro(1);
+        if (libroEncontrado != null) {
+            System.out.println("\nLibro encontrado: " + libroEncontrado);
+        } else {
+            System.out.println("\nLibro no encontrado.");
+        }
 
-                default:
-                    System.out.println("Opcion invalida.");
-            }
+        // Eliminar un libro
+        boolean eliminado = biblioteca.eliminarLibro(2);
+        if (eliminado) {
+            System.out.println("\nLibro eliminado correctamente.");
+        } else {
+            System.out.println("\nNo se pudo eliminar el libro.");
+        }
+
+        // Mostrar los libros después de eliminar
+        System.out.println("\nLibros en la biblioteca después de eliminar:");
+        for (Libro libro : biblioteca.obtenerLibros()) {
+            System.out.println(libro);
         }
     }
 }
