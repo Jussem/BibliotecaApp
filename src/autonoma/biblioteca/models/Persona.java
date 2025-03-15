@@ -2,43 +2,39 @@
 package autonoma.biblioteca.models;
 
 public class Persona {
-    ///////////////////////////////////////////////////////////////////////////////////
-    ///Atributos
-    
     private String nombre;
     private String documentoIdentidad;
     private String correoElectronico;
 
+    // Constructor
     public Persona(String nombre, String documentoIdentidad, String correoElectronico) {
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.correoElectronico = correoElectronico;
     }
 
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public void setDocumentoIdentidad(String documentoIdentidad) {
-        this.documentoIdentidad = documentoIdentidad;
+    // Getters y Setters
+    public String getNombre() {
+        return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
     public String getDocumentoIdentidad() {
         return documentoIdentidad;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setDocumentoIdentidad(String documentoIdentidad) {
+        this.documentoIdentidad = documentoIdentidad;
     }
-    
-    
-    
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
 }
