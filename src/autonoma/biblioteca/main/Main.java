@@ -6,35 +6,84 @@ import autonoma.biblioteca.models.Libro;
 import java.util.ArrayList;
 
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Biblioteca biblioteca = new Biblioteca();
 
-        Libro libro1 = new Libro(1, "Cien años de soledad");
-        Libro libro2 = new Libro(2, "1984");
-        Libro libro3 = new Libro(3, "El Principito");
+        while (true) {
+            System.out.println("\n--- Menu de la Biblioteca ---");
+            System.out.println("1. Agregar libro");
+            System.out.println("2. Mostrar libros");
+            System.out.println("3. Buscar libro por ID");
+            System.out.println("4. Eliminar libro por ID");
+            System.out.println("5. Mostrar libros ordenados alfabeticamente");
+            System.out.println("6. Salir");
+            System.out.print("Seleccione una opcion: ");
+            int opcion = scanner.nextInt();
+            scanner.nextLine();  
 
-        biblioteca.agregarLibro(libro1);
-        biblioteca.agregarLibro(libro2);
-        biblioteca.agregarLibro(libro3);
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese el ID del libro: ");
+                    long id = scanner.nextLong();
+                    scanner.nextLine();  
+                    System.out.print("Ingrese el titulo del libro: ");
+                    String titulo = scanner.nextLine();
+                    Libro nuevoLibro = new Libro(id, titulo);
+                    if (biblioteca.agregarLibro(nuevoLibro)) {
+                        System.out.println("Libro agregado correctamente.");
+                    } else {
+                        System.out.println("Error al agregar el libro.");
+                    }
+                    break;
 
-        System.out.println("Libros en la biblioteca:");
-        System.out.println(biblioteca.mostrarLibros());
+                case 2:
+                    System.out.println("\nLibros en la biblioteca:");
+                    System.out.println(biblioteca.mostrarLibros());
+                    break;
 
-        System.out.println("Buscando libro con ID 2:");
-        Libro libroEncontrado = biblioteca.buscarLibro(2);
-        if (libroEncontrado != null) {
-            System.out.println(libroEncontrado.getTitulo());
-        }
+                case 3:
+                    System.out.print("Ingrese el ID del libro a buscar: ");
+                    long idBuscar = scanner.nextLong();
+                    scanner.nextLine();  
+                    Libro libroEncontrado = biblioteca.buscarLibro(idBuscar);
+                    if (libroEncontrado != null) {
+                        System.out.println("Libro encontrado: " + libroEncontrado.getTitulo());
+                    } else {
+                        System.out.println("Libro no encontrado.");
+                    }
+                    break;
 
-        System.out.println("Eliminando libro con ID 1:");
-        biblioteca.eliminarLibro(1);
-        System.out.println(biblioteca.mostrarLibros());
+                case 4:
+                    System.out.print("Ingrese el ID del libro a eliminar: ");
+                    long idEliminar = scanner.nextLong();
+                    scanner.nextLine();  
+                    if (biblioteca.eliminarLibro(idEliminar)) {
+                        System.out.println("Libro eliminado .");
+                    } else {
+                        System.out.println("Error al eliminar el libro.");
+                    }
+                    break;
 
-        System.out.println("Libros ordenados alfabéticamente:");
-        ArrayList<Libro> librosOrdenados = biblioteca.obtenerLibrosAlfabeticamente();
-        for (Libro libro : librosOrdenados) {
-            System.out.println(libro.getTitulo());
+                case 5:
+                    System.out.println("\nLibros ordenados alfabeticamente:");
+                    ArrayList<Libro> librosOrdenados = biblioteca.obtenerLibrosAlfabeticamente();
+                    for (Libro libro : librosOrdenados) {
+                        System.out.println(libro.getTitulo());
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Saliendo..");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Opcion invalida.");
+            }
         }
     }
 }
