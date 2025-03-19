@@ -5,23 +5,29 @@
 package autonoma.biblioteca.views;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import autonoma.biblioteca.models.*;
 
 /**
  *
- * @author juanb
+ * @author juan
  */
 public class ActualizarLibro extends javax.swing.JDialog {
     private VentanaPrincipal ventanaPrincipal;
+
     /**
      * Creates new form ActualizarLibro
+     * @param ventanaPrincipal
      */
+    
     public ActualizarLibro(VentanaPrincipal ventanaPrincipal) {
         super(ventanaPrincipal, true);
         this.ventanaPrincipal = ventanaPrincipal;
         initComponents();
-        this.setLocationRelativeTo(null);
+            this.setLocationRelativeTo(null);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/biblioteca/iamges/biblioteca.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaPOO/images/Biblioteca.png")).getImage());
         }catch(Exception e){
             
         }
@@ -145,9 +151,68 @@ public class ActualizarLibro extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+     try {
+        String idStr = idActualizartxt.getText().trim();
+        String nuevoIdStr = Nuevoidtxt.getText().trim();
+        String nuevoTitulo = NuevoTitulotxt.getText().trim();
+
+        if (idStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar el ID del libro a actualizar", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Long idBuscado = Long.parseLong(idStr);
+
+        DefaultTableModel modelo = (DefaultTableModel) ventanaPrincipal.getTablaLibros().getModel();
+        boolean encontrado = false;
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            Long idTabla = (Long) modelo.getValueAt(i, 0);
+            if (idTabla.equals(idBuscado)) {
+                // Si el usuario ingresó un nuevo ID, actualizarlo
+                if (!nuevoIdStr.isEmpty()) {
+                    Long nuevoId = Long.parseLong(nuevoIdStr);
+                    modelo.setValueAt(nuevoId, i, 0);
+                    Libro libro = ventanaPrincipal.getBiblioteca().buscarLibro(idBuscado);
+                    if (libro != null) {
+                        libro.setId(nuevoId);
+                    }
+                }
+
+                // Si el usuario ingresó un nuevo título, actualizarlo
+                if (!nuevoTitulo.isEmpty()) {
+                    modelo.setValueAt(nuevoTitulo, i, 1);
+                    Libro libro = ventanaPrincipal.getBiblioteca().buscarLibro(idBuscado);
+                    if (libro != null) {
+                        libro.setTitulo(nuevoTitulo);
+                    }
+                }
+
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            JOptionPane.showMessageDialog(this, "Libro actualizado correctamente");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Libro no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Ingrese IDs válidos", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (NullPointerException e) {
+        JOptionPane.showMessageDialog(this, "Error al actualizar el libro. Asegúrese de que el libro existe.", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Ocurrió un error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+     
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;

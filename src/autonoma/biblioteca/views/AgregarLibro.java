@@ -5,31 +5,40 @@
 package autonoma.biblioteca.views;
 
 import autonoma.biblioteca.models.Biblioteca;
+import autonoma.biblioteca.models.Libro;
+import java.awt.Frame;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author juanb
+ * @author juan
  */
 public class AgregarLibro extends javax.swing.JDialog {
     private Biblioteca biblioteca;
     private VentanaPrincipal ventanaPrincipal;
-    
+
     /**
-     * Creates new form AgregarLibro
+     * Creates new form AgregarLibro2
      */
-    public AgregarLibro(java.awt.Frame parent, boolean modal,Biblioteca biblioteca, VentanaPrincipal ventanaPrincipal) {
+    public AgregarLibro(Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventanaPrincipal) {
         super(parent, modal);
         this.biblioteca = biblioteca;
         this.ventanaPrincipal = ventanaPrincipal;
+        
         initComponents();
-        this.setLocationRelativeTo(null);
+                
+        setLocationRelativeTo(this);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/biblioteca/iamges/biblioteca.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaPOO/images/Biblioteca.png")).getImage());
         }catch(Exception e){
             
         }
+
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -167,7 +176,8 @@ public class AgregarLibro extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        agregarLibro();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /*private void agregarLibro(){
