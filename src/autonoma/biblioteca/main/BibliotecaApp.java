@@ -1,7 +1,8 @@
-package autonoma.BibliotecaApp.main;
+package autonoma.Biblioteca.main;
 
 import autonoma.BibliotecaApp.models.Biblioteca;
-import autonoma.BibliotecaApp.views.VentanaPrincipal;
+//import autonoma.BibliotecaApp.views.VentanaPrincipal;
+import autonoma.biblioteca.views.VentanaPrincipal;
 import java.util.ArrayList;
 
 /**

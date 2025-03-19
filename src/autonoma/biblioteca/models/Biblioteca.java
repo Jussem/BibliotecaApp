@@ -18,6 +18,7 @@ public class Biblioteca {
      */
     
     private List<Libro> libros;
+    private final ArrayList<Autor> autor;
     
     
     ///////////////////////////////////////////////////////////////////////
@@ -87,7 +88,7 @@ public class Biblioteca {
             return true;
         }
     }
-    return false;
+    return false;
 }
    public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
         ArrayList<Libro> librosOrdenados = new ArrayList<>(libros);
