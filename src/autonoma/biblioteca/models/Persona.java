@@ -1,19 +1,40 @@
+package autonoma.BibliotecaApp.models;
 
-package autonoma.biblioteca.models;
-
+/**
+ * modelo que representa una persona
+ * @author Alejandra
+ * since 20250315
+ * @version 1.0
+ */
 public class Persona {
+    /////// Atributos
+    
+    /**
+     * Nombre de la persona
+     */
     private String nombre;
+
+    /**
+     * Documento de identidad de la persona
+     */
     private String documentoIdentidad;
+
+    /**
+     * Correo electronico de la persona
+     */
     private String correoElectronico;
 
-    // Constructor
+    
+    
+    //////metodo constructor
     public Persona(String nombre, String documentoIdentidad, String correoElectronico) {
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.correoElectronico = correoElectronico;
     }
 
-    // Getters y Setters
+    
+    //////metodos de acceso
     public String getNombre() {
         return nombre;
     }
@@ -36,14 +57,5 @@ public class Persona {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
-    }
-
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", documentoIdentidad='" + documentoIdentidad + '\'' +
-                ", correoElectronico='" + correoElectronico + '\'' +
-                '}';
     }
 }

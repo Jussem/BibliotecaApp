@@ -1,25 +1,67 @@
-
-package autonoma.biblioteca.models;
+package autonoma.BibliotecaApp.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ *Modelo que representa una biblioteca
+ * @author Alejandra
+ * since 20250315
+ * version 1.0
+ */
 public class Biblioteca {
-    private ArrayList<Libro> libros;
-    private ArrayList<Autor> autores;
-    private ArrayList<Persona> personas;
-
-    // Constructor
+    //////////////////////////////////////////////////////////////
+    /// Atributos
+    
+    /**
+     * Arreglo de libros 
+     */
+    
+    private List<Libro> libros;
+    
+    
+    ///////////////////////////////////////////////////////////////////////
+    ///Metodo Constructor
     public Biblioteca() {
         this.libros = new ArrayList<>();
-        this.autores = new ArrayList<>();
-        this.personas = new ArrayList<>();
+        this.autor = new ArrayList<>();
     }
 
-    // Métodos para Libros
-    public boolean agregarLibro(Libro libro) {
-        return libros.add(libro);
+    
+    
+    ///////////////////////////////////////////////////////////////////////
+    ///Metodos acceso
+    public List<Libro> getLibros() {
+        return libros;
     }
 
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros;
+    }
+    
+    
+    
+   public boolean agregarLibro(Libro libro) {
+    for (int i = 0; i < libros.size(); i++) {
+        if (libros.get(i).getId() == libro.getId()) {
+            return false; // Ya existe un libro con ese ID
+        }
+    }
+    return libros.add(libro);
+}
+    
+    public String mostrarLibros() {
+        if (libros.isEmpty()) {
+            return "no hay libros en la biblioteca";
+        }
+
+    String resultado = "libros: ";
+    for (int i = 0; i < libros.size(); i++) {
+        resultado += "id: " + libros.get(i).getId() + ", titulo: " + libros.get(i).getTitulo();
+    }
+    return resultado;
+}
+     
     public Libro buscarLibro(long id) {
         for (Libro libro : libros) {
             if (libro.getId() == id) {
@@ -28,56 +70,37 @@ public class Biblioteca {
         }
         return null;
     }
-
-    public boolean eliminarLibro(long id) {
-        return libros.removeIf(libro -> libro.getId() == id);
+    
+   public boolean actualizarLibro(Libro libro, long id) {
+    for (int i = 0; i < libros.size(); i++) {
+        if (libros.get(i).getId() == id) {
+            libros.get(i).setTitulo(libro.getTitulo());   
+            return true; 
+        }
     }
-
-    public ArrayList<Libro> obtenerLibros() {
-        return libros;
+    return false; 
+}
+   public boolean eliminarLibro(long id) {
+    for (Libro libro : libros) {
+        if (libro.getId() == id) {
+            libros.remove(libro);
+            return true;
+        }
     }
-
-    // Métodos para Autores
-    public boolean agregarAutor(Autor autor) {
-        return autores.add(autor);
-    }
-
-    public Autor buscarAutor(String documentoIdentidad) {
-        for (Autor autor : autores) {
-            if (autor.getDocumentoIdentidad().equals(documentoIdentidad)) {
-                return autor;
+    return false;
+}
+   public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
+        ArrayList<Libro> librosOrdenados = new ArrayList<>(libros);
+        for (int i = 0; i < librosOrdenados.size() - 1; i++) {
+            for (int j = i + 1; j < librosOrdenados.size(); j++) {
+                if (librosOrdenados.get(i).getTitulo().compareTo(librosOrdenados.get(j).getTitulo()) > 0) {
+                    Libro temp = librosOrdenados.get(i);
+                    librosOrdenados.set(i, librosOrdenados.get(j));
+                    librosOrdenados.set(j, temp);
+                }
             }
         }
-        return null;
-    }
-
-    public boolean eliminarAutor(String documentoIdentidad) {
-        return autores.removeIf(autor -> autor.getDocumentoIdentidad().equals(documentoIdentidad));
-    }
-
-    public ArrayList<Autor> obtenerAutores() {
-        return autores;
-    }
-
-    // Métodos para Personas
-    public boolean agregarPersona(Persona persona) {
-        return personas.add(persona);
-    }
-
-    public Persona buscarPersona(String documentoIdentidad) {
-        for (Persona persona : personas) {
-            if (persona.getDocumentoIdentidad().equals(documentoIdentidad)) {
-                return persona;
-            }
-        }
-        return null;
-    }
-
-    public boolean eliminarPersona(String documentoIdentidad) {
-        return personas.removeIf(persona -> persona.getDocumentoIdentidad().equals(documentoIdentidad));
-    }
-
-    public ArrayList<Persona> obtenerPersonas() {
-        return personas;
-    }
+        return librosOrdenados;
+   }
+   
 }
