@@ -1,4 +1,4 @@
-package autonoma.BibliotecaApp.models;
+package autonoma.biblioteca.models;
 
 /**
  * modelo que representa una persona
@@ -31,6 +31,10 @@ public class Persona {
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.correoElectronico = correoElectronico;
+    }
+
+    public Persona() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

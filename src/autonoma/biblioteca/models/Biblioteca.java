@@ -1,4 +1,4 @@
-package autonoma.BibliotecaApp.models;
+package autonoma.biblioteca.models;
 
 import java.util.ArrayList;
 import java.util.List;

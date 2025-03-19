@@ -1,4 +1,4 @@
-package autonoma.BibliotecaApp.models;
+package autonoma.biblioteca.models;
 
 /**
  *Modelo que representa un autor
