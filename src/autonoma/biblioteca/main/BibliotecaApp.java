@@ -12,6 +12,9 @@ public class BibliotecaApp {
 
 
     public static void main(String[] args) {
+        //Biblioteca bj=new Biblioteca();
+        
+        
         VentanaPrincipal ventanaPrincipal = new  VentanaPrincipal();
         ventanaPrincipal.setVisible(true);
         
