@@ -1,40 +1,44 @@
-
 package autonoma.bibliotecaAPP.models;
 
 /**
- *Modelo que representa un libro
+ * Modelo que representa un libro
  * @author alejandra
- * since 
- * version 1.0
+ * @since 2025
+ * @version 1.0
  */
 public class Libro {
     /////// Atributos
-    
+
     /**
-     * id
+     * Contador estático para generar IDs únicos automáticamente
      */
-    private long id;
-    
+    private static long contadorId = 1;
+
     /**
-     * titulo del libro
+     * id del libro
+     */
+    private final long id; // ahora es final porque nunca cambiará después de creado
+
+    /**
+     * Título del libro
      */
     private String titulo;
-    
 
-    
-    ////// Metodo Constructor 
-    public Libro( long id, String titulo) {
-        this.id = id;
+    ////// Método Constructor 
+
+    /**
+     * Constructor que asigna automáticamente el ID usando el contador
+     * @param titulo Título del libro
+     */
+    public Libro(String titulo) {
+        this.id = contadorId++; // asigna el valor actual del contador y luego lo incrementa
         this.titulo = titulo;
     }
 
-    ///// Metodos de Acceso
+    ///// Métodos de Acceso
+
     public long getId() {
         return id;
-    }
- 
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitulo() {
@@ -44,5 +48,4 @@ public class Libro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-  
 }

@@ -4,39 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *Modelo que representa una biblioteca
+ * Modelo que representa una biblioteca
  * @author alejandra
- * since 
- * version 
+ * @since 2025
+ * @version 1.1
  */
 public class Biblioteca {
     //////////////////////////////////////////////////////////////
     /// Atributos
-    
+
     /**
-     * Arreglo de libros 
+     * Arreglo de libros
      */
-    
     private List<Libro> libros;
-    
-    
-    ///////////////////////////////////////////////////////////////////////
-    ///Metodo Constructor
+
+    //////////////////////////////////////////////////////////////
+    /// Método Constructor
+
     public Biblioteca() {
         this.libros = new ArrayList<>();
 
-        // Agregar algunos libros de prueba
-        libros.add(new Libro(1L, "A"));
-        libros.add(new Libro(2L, "AA"));
-        libros.add(new Libro(3L, "AAA"));
-
-
+        // Agregar algunos libros de prueba SIN ID manual
+        libros.add(new Libro("El principito"));
+        libros.add(new Libro("Don Quijote de la mancha"));
+        libros.add(new Libro("Cien años de soledad"));
     }
 
-    
-    
-    ///////////////////////////////////////////////////////////////////////
-    ///Metodos acceso
+    //////////////////////////////////////////////////////////////
+    /// Métodos de acceso
+
     public List<Libro> getLibros() {
         return libros;
     }
@@ -44,40 +40,35 @@ public class Biblioteca {
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
     }
-    
-    
-    
-   public boolean agregarLibro(Libro libro) {
-    for (int i = 0; i < libros.size(); i++) {
-        if (libros.get(i).getId() == libro.getId()) {
-            return false; // Ya existe un libro con ese ID
+
+    public boolean agregarLibro(Libro libro) {
+        for (Libro l : libros) {
+            if (l.getId() == libro.getId()) {
+                return false; // Ya existe un libro con ese ID
+            }
         }
+        return libros.add(libro);
     }
-    return libros.add(libro);
-}
-    
+
     public String mostrarLibros() {
         if (libros.isEmpty()) {
-            return "no hay libros en la biblioteca";
+            return "No hay libros en la biblioteca.";
         }
 
-    String resultado = "libros: ";
-    for (int i = 0; i < libros.size(); i++) {
-        resultado += "id: " + libros.get(i).getId() + ", titulo: " + libros.get(i).getTitulo();
-    }
-    return resultado;
-}
-    
-    public boolean eliminarLibro(long id) {
-    for (Libro libro : libros) {
-        if (libro.getId() == id) {
-            libros.remove(libro);
-            return true;
+        StringBuilder resultado = new StringBuilder("Libros:\n");
+        for (Libro libro : libros) {
+            resultado.append("ID: ").append(libro.getId())
+                     .append(", Título: ").append(libro.getTitulo())
+                     .append("\n");
         }
+        return resultado.toString();
     }
-    return false;
-}
-    
+
+    /**
+     * Método para buscar un libro por ID
+     * @param id ID del libro a buscar
+     * @return el libro si se encuentra, null si no existe
+     */
     public Libro buscarLibro(long id) {
         for (Libro libro : libros) {
             if (libro.getId() == id) {
@@ -86,28 +77,17 @@ public class Biblioteca {
         }
         return null;
     }
-    
-   public boolean actualizarLibro(Libro libro, long id) {
-    for (int i = 0; i < libros.size(); i++) {
-        if (libros.get(i).getId() == id) {
-            libros.get(i).setTitulo(libro.getTitulo());   
-            return true; 
+
+    /**
+     * Método para eliminar un libro por ID
+     * @param id ID del libro a eliminar
+     * @return true si el libro fue eliminado, false si no se encontró
+     */
+    public boolean eliminarLibro(long id) {
+        Libro libro = buscarLibro(id);
+        if (libro != null) {
+            return libros.remove(libro);
         }
+        return false;
     }
-    return false; 
-}
-    
-       public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
-        ArrayList<Libro> librosOrdenados = new ArrayList<>(libros);
-        for (int i = 0; i < librosOrdenados.size() - 1; i++) {
-            for (int j = i + 1; j < librosOrdenados.size(); j++) {
-                if (librosOrdenados.get(i).getTitulo().compareTo(librosOrdenados.get(j).getTitulo()) > 0) {
-                    Libro temp = librosOrdenados.get(i);
-                    librosOrdenados.set(i, librosOrdenados.get(j));
-                    librosOrdenados.set(j, temp);
-                }
-            }
-        }
-        return librosOrdenados;
-   }
 }
