@@ -3,9 +3,9 @@ package autonoma.bibliotecaAPP.models;
 
 /**
  * modelo que representa una persona
- * @author Juan Diego
- * since 20250315
- * @version 1.0
+ * @author Juan
+ * since 
+ * @version 
  */
 public class Persona {
     /////// Atributos

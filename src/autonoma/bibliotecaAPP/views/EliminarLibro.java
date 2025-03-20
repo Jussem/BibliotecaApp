@@ -12,9 +12,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Juan Diego
- * @since 20250316
- * @version 1.0
+ * @author Juan
+ * @since 
+ * @version 1
  */
 public class EliminarLibro extends javax.swing.JDialog {
 

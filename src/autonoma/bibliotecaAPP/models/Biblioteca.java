@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  *Modelo que representa una biblioteca
- * @author alejandro
- * since 20250315
- * version 1.2
+ * @author alejandra
+ * since 
+ * version 
  */
 public class Biblioteca {
     //////////////////////////////////////////////////////////////

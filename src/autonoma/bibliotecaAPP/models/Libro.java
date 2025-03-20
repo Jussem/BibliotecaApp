@@ -3,8 +3,8 @@ package autonoma.bibliotecaAPP.models;
 
 /**
  *Modelo que representa un libro
- * @author alejandro
- * since 20250315
+ * @author alejandra
+ * since 
  * version 1.0
  */
 public class Libro {

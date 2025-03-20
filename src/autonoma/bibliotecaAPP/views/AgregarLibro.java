@@ -10,9 +10,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Gilary
- * @since 20250316
- * @version 1.0
+ * @author salome
+ * @since 
+ * @version 1
  */
 public class AgregarLibro extends javax.swing.JDialog {
     private Biblioteca biblioteca;

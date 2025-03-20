@@ -7,9 +7,9 @@ import autonoma.bibliotecaAPP.models.Libro;
 
 /**
  *
- * @author Gilary
- * @since 20250316
- * @version 1.1
+ * @author alejandra
+ * @since 
+ * @version 1
  */
 public class ActualizarLibro extends javax.swing.JDialog {
     private VentanaPrincipal ventanaPrincipal;

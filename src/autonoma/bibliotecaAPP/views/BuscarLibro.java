@@ -10,9 +10,9 @@ import javax.swing.table.DefaultTableModel;
 
 
 /**
- * @author Juan Diego
- * @since 20250316
- * @version 1.3
+ * @author Juan
+ * @since 
+ * @version
  */
 public class BuscarLibro extends javax.swing.JFrame {
     private Biblioteca biblioteca;
