@@ -17,13 +17,17 @@ public class Biblioteca {
      * Arreglo de libros
      */
     private List<Libro> libros;
+    private List<Autor> autores;
 
     //////////////////////////////////////////////////////////////
     /// Método Constructor
 
     public Biblioteca() {
         this.libros = new ArrayList<>();
-
+        this.autores = new ArrayList<>();
+        autores.add(new Autor("Gabriel","9832903","Gabriel@gmail.com","Times","Politologo"));
+        autores.add(new Autor("Daniel","9347","Daniel@gmail.com","RRHJ","Cientifico"));
+        autores.add(new Autor("Rafael","980923","Rafael@gmail.com","ROTINHAM","Medico"));
         // Agregar algunos libros de prueba SIN ID manual
         libros.add(new Libro("El principito"));
         libros.add(new Libro("Don Quijote de la mancha"));

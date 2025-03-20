@@ -69,7 +69,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -123,34 +123,103 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="titulo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="txtTitulo" min="-2" pref="220" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                           <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtTitulo" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtAutor" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtProfesion" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtCorreo" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtNombre" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtCedula" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="txtEditorial" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="174" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="titulo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="titulo4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="486" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="titulo5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="486" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="titulo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="titulo2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="titulo3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Component id="titulo6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="titulo" min="-2" max="-2" attributes="0"/>
                       <Component id="txtTitulo" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtAutor" min="-2" max="-2" attributes="0"/>
+                      <Component id="titulo2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtProfesion" min="-2" max="-2" attributes="0"/>
+                      <Component id="titulo3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="titulo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCorreo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="titulo4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="titulo5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCedula" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="titulo6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEditorial" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -192,6 +261,66 @@
           </Events>
         </Component>
         <Component class="java.awt.TextField" name="txtTitulo">
+        </Component>
+        <Component class="java.awt.TextField" name="txtProfesion">
+        </Component>
+        <Component class="java.awt.TextField" name="txtAutor">
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="AUTOR:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="PROFESION:"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="txtCorreo">
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CORREO:"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="txtNombre">
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NOMBRE:"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="txtCedula">
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CEDULA:"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="txtEditorial">
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Ming Std L" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="EDITORIAL"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

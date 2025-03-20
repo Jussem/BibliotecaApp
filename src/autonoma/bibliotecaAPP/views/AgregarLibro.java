@@ -1,6 +1,7 @@
 
 package autonoma.bibliotecaAPP.views;
 
+import autonoma.bibliotecaAPP.models.Autor;
 import autonoma.bibliotecaAPP.models.Biblioteca;
 import autonoma.bibliotecaAPP.models.Libro;
 import java.awt.Frame;
@@ -57,6 +58,18 @@ public class AgregarLibro extends javax.swing.JDialog {
         btnAgregar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtTitulo = new java.awt.TextField();
+        txtProfesion = new java.awt.TextField();
+        txtAutor = new java.awt.TextField();
+        titulo2 = new javax.swing.JLabel();
+        titulo3 = new javax.swing.JLabel();
+        txtCorreo = new java.awt.TextField();
+        titulo1 = new javax.swing.JLabel();
+        txtNombre = new java.awt.TextField();
+        titulo4 = new javax.swing.JLabel();
+        txtCedula = new java.awt.TextField();
+        titulo5 = new javax.swing.JLabel();
+        txtEditorial = new java.awt.TextField();
+        titulo6 = new javax.swing.JLabel();
 
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -85,7 +98,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -125,6 +138,24 @@ public class AgregarLibro extends javax.swing.JDialog {
             }
         });
 
+        titulo2.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo2.setText("AUTOR:");
+
+        titulo3.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo3.setText("PROFESION:");
+
+        titulo1.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo1.setText("CORREO:");
+
+        titulo4.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo4.setText("NOMBRE:");
+
+        titulo5.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo5.setText("CEDULA:");
+
+        titulo6.setFont(new java.awt.Font("Adobe Ming Std L", 3, 14)); // NOI18N
+        titulo6.setText("EDITORIAL");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -132,25 +163,77 @@ public class AgregarLibro extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(titulo)
-                        .addGap(96, 96, 96)
-                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(btnAgregar)
                         .addGap(100, 100, 100)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(174, Short.MAX_VALUE))
+                        .addComponent(btnCancelar))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtProfesion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 38, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titulo1)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(titulo4)
+                                .addGap(486, 486, 486))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(titulo5)
+                                .addGap(486, 486, 486))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(titulo)
+                                .addComponent(titulo2)
+                                .addComponent(titulo3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(titulo6)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(75, 75, 75)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(titulo)
                     .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo2))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtProfesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titulo1)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titulo4)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titulo5)
+                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titulo6)
+                    .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
                     .addComponent(btnCancelar))
@@ -185,7 +268,36 @@ public class AgregarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 private void agregarLibro() {
     String titulo = txtTitulo.getText().trim();
-
+    String autor = txtAutor.getName().trim();
+    String profesion = txtProfesion.getText().trim();
+    String correo = txtCorreo.getText().trim();
+    String nombre = txtNombre.getText().trim();
+    String cedula = txtCedula.getText().trim();
+    String editorial = txtEditorial.getText().trim();
+     if (editorial.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese la editorial del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (cedula.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese la cedula del autor del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (nombre.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese el nombre del autor del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (correo.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese el correo autor del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (profesion.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese la profesion autor del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (autor.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ingrese el autor del libro", "Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
     if (titulo.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Ingrese el título del libro", "Error", JOptionPane.WARNING_MESSAGE);
         return;
@@ -193,13 +305,14 @@ private void agregarLibro() {
 
     // Crear libro con ID generado automáticamente
     Libro nuevoLibro = new Libro(titulo);
+    Autor nuevoAutor=new Autor(nombre,cedula,correo,editorial,profesion);
 
     boolean agregado = biblioteca.agregarLibro(nuevoLibro);
 
     if (agregado) {
         
         // Agregarlo a la tabla
-        agregarLibroTabla(nuevoLibro);
+        agregarLibroTabla(nuevoLibro,nuevoAutor);
         JOptionPane.showMessageDialog(this, "Libro agregado exitosamente. ID generado: " + nuevoLibro.getId());
         this.dispose(); // Cierra el diálogo después de agregar
     } else {
@@ -216,9 +329,21 @@ private void agregarLibro() {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel titulo;
+    private javax.swing.JLabel titulo1;
+    private javax.swing.JLabel titulo2;
+    private javax.swing.JLabel titulo3;
+    private javax.swing.JLabel titulo4;
+    private javax.swing.JLabel titulo5;
+    private javax.swing.JLabel titulo6;
+    private java.awt.TextField txtAutor;
+    private java.awt.TextField txtCedula;
+    private java.awt.TextField txtCorreo;
+    private java.awt.TextField txtEditorial;
+    private java.awt.TextField txtNombre;
+    private java.awt.TextField txtProfesion;
     private java.awt.TextField txtTitulo;
     // End of variables declaration//GEN-END:variables
-private void agregarLibroTabla(Libro libro) {
+private void agregarLibroTabla(Libro libro,Autor Autor) {
     DefaultTableModel modelo = (DefaultTableModel) ventanaPrincipal.getTablaLibros().getModel();
     modelo.addRow(new Object[]{libro.getId(), libro.getTitulo()});
 }

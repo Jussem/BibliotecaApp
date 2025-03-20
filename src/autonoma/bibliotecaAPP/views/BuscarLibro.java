@@ -199,6 +199,7 @@ public class BuscarLibro extends javax.swing.JFrame {
         Libro libroEncontrado = biblioteca.buscarLibro(idBuscado);
         if (libroEncontrado != null) {
             outputBookTF.setText(libroEncontrado.getTitulo());
+            JOptionPane.showMessageDialog(this, "Libro encontrado: " + libroEncontrado.getTitulo(), "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Libro no encontrado");
         }
