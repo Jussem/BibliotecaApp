@@ -1,8 +1,9 @@
-package autonoma.biblioteca.models;
+
+package autonoma.bibliotecaAPP.models;
 
 /**
  * modelo que representa una persona
- * @author Alejandra
+ * @author Juan Diego
  * since 20250315
  * @version 1.0
  */
@@ -31,10 +32,6 @@ public class Persona {
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.correoElectronico = correoElectronico;
-    }
-
-    public Persona() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

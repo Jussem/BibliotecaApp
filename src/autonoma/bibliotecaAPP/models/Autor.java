@@ -1,10 +1,10 @@
-package autonoma.biblioteca.models;
+package autonoma.bibliotecaAPP.models;
 
 /**
  *Modelo que representa un autor
- * @author Alejandra
- * @since 20250312
- * @version 1.0
+ * @author Salome
+ * @since 
+ * @version 1.17
  */
 public class Autor extends Persona {
     //Atributos 

@@ -1,13 +1,13 @@
-package autonoma.biblioteca.models;
+package autonoma.bibliotecaAPP.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *Modelo que representa una biblioteca
- * @author Alejandra
+ * @author alejandro
  * since 20250315
- * version 1.0
+ * version 1.2
  */
 public class Biblioteca {
     //////////////////////////////////////////////////////////////
@@ -18,14 +18,19 @@ public class Biblioteca {
      */
     
     private List<Libro> libros;
-    private final ArrayList<Autor> autor;
     
     
     ///////////////////////////////////////////////////////////////////////
     ///Metodo Constructor
     public Biblioteca() {
         this.libros = new ArrayList<>();
-        this.autor = new ArrayList<>();
+
+        // Agregar algunos libros de prueba
+        libros.add(new Libro(1L, "A"));
+        libros.add(new Libro(2L, "AA"));
+        libros.add(new Libro(3L, "AAA"));
+
+
     }
 
     
@@ -62,7 +67,17 @@ public class Biblioteca {
     }
     return resultado;
 }
-     
+    
+    public boolean eliminarLibro(long id) {
+    for (Libro libro : libros) {
+        if (libro.getId() == id) {
+            libros.remove(libro);
+            return true;
+        }
+    }
+    return false;
+}
+    
     public Libro buscarLibro(long id) {
         for (Libro libro : libros) {
             if (libro.getId() == id) {
@@ -81,16 +96,8 @@ public class Biblioteca {
     }
     return false; 
 }
-   public boolean eliminarLibro(long id) {
-    for (Libro libro : libros) {
-        if (libro.getId() == id) {
-            libros.remove(libro);
-            return true;
-        }
-    }
-    return false;
-}
-   public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
+    
+       public ArrayList<Libro> obtenerLibrosAlfabeticamente() {
         ArrayList<Libro> librosOrdenados = new ArrayList<>(libros);
         for (int i = 0; i < librosOrdenados.size() - 1; i++) {
             for (int j = i + 1; j < librosOrdenados.size(); j++) {
@@ -103,5 +110,4 @@ public class Biblioteca {
         }
         return librosOrdenados;
    }
-   
 }
