@@ -28,7 +28,7 @@ public class EliminarLibro extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         try {
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaPOO/images/Biblioteca.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaAPP/images/Biblioteca.png")).getImage());
         } catch (Exception e) {
             
         }
